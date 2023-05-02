@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} contact{% endblock title %}
+
+{% block body %}
+<div class="container-fluid mr-4">
+    {% comment %} <img src="http://source.unsplash.com/1200*400/?phone,contact"  class="d-block w-100"  alt="imges">  {% endcomment %}
+     {% comment %} <img src="static/images/111.AVIF"  class="d-block w-100"  alt="imges">  {% endcomment %}
+   <img src="https://images.unsplash.com/photo-1557180295-76eee20ae8aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHBob25lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60
+    "class="d-block w-90 my-3"  alt="imges">
+   {% comment %} # https://images.unsplash.com/photo-1557180295-76eee20ae8aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHBob25lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60 {% endcomment %}
+</div>
+<div class="container">
+    <h1 class=""> Contact Us</h1>
+    <form method="post" action="/contact"> 
+         {% csrf_token %}
+     <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label" name="email">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+      </div>  
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone Number </label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your Phone number ">
+      </div>
+      
+      <div class="form-group">
+        <label for="desc" class="form-label">Tell me about what you want to contact me for ......</label>
+        <textarea class="form-control" id="desc" name="desc"></textarea>
+      </div>
+      <button class="btn btn-primary mt-3" type="submit">Submit </button>
+    </form>
+</div>
+{% endblock body %}
